@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>LocalStorage Fast Travel</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="title">
+      <h1>LocalStorage Fast Travel</h1>
+      <div id="origin" class="origin">…</div>
+    </div>
+    <button id="btn-refresh" class="btn ghost" title="Tải lại">Tải lại</button>
+  </header>
+
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="Tìm theo key hoặc value" autofocus>
+    <button id="btn-add" class="btn primary">Thêm item</button>
+  </div>
+
+  <div id="meta" class="meta"></div>
+  <main id="list"></main>
+
+  <footer>
+    <button id="btn-export" class="btn">Export JSON</button>
+    <button id="btn-import" class="btn">Import JSON</button>
+    <input id="file-input" type="file" accept="application/json,.json" hidden>
+    <span class="spacer"></span>
+    <button id="btn-clear" class="btn danger">Xóa tất cả</button>
+  </footer>
+
+  <div id="modal" class="modal hidden">
+    <div class="dialog">
+      <h2 id="modal-title">Thêm item</h2>
+      <label for="f-key">Key</label>
+      <input id="f-key" type="text" spellcheck="false">
+      <label for="f-value">Value</label>
+      <textarea id="f-value" rows="10" spellcheck="false"></textarea>
+      <div class="dialog-actions">
+        <button id="btn-format" class="btn ghost">Format JSON</button>
+        <span class="spacer"></span>
+        <button id="btn-cancel" class="btn">Hủy</button>
+        <button id="btn-save" class="btn primary">Lưu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"><span id="toast-msg"></span><button id="toast-action" class="link hidden"></button></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
