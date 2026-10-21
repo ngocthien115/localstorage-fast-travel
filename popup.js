@@ -146,7 +146,7 @@ function render() {
     const actions = document.createElement("div");
     actions.className = "row-actions";
     actions.append(
-      mkBtn("Copy", () => copy(e.value)),
+      mkBtn("Copy", () => copy(e.value.replace(/^"|"$/g, ""))),
       mkBtn("Xóa", () => remove(e)),
     );
 
